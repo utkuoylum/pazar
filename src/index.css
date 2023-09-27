@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.arrow-styles {
-    @apply text-[5rem] text-white absolute bottom-10 cursor-pointer drop-shadow-[5px_5px_10px_#000000];
+.arrows {
+    @apply cursor-pointer hover:scale-110 hover:text-[#d5d1d1] duration-300 drop-shadow-lg
 }
