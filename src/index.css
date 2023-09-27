@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.arrow-styles {
+    @apply text-[5rem] text-white absolute bottom-10 cursor-pointer drop-shadow-[5px_5px_10px_#000000];
+}
