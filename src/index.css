@@ -3,5 +3,8 @@
 @tailwind utilities;
 
 .arrows {
-    @apply cursor-pointer hover:scale-110 hover:text-[#d5d1d1] duration-300 drop-shadow-lg
+    @apply cursor-pointer hover:scale-110 hover:text-[#d5d1d1] duration-300 drop-shadow-[-11px_8px_13px_#000000]
+}
+.menuItems {
+    @apply text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer;
 }

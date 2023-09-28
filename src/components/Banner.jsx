@@ -21,7 +21,7 @@ const handleSlideDecrement = () => {
  }
 
   useEffect(() => {
-    const interval = setInterval(()=> {handleSlideIncrement()}, 7000)
+    const interval = setInterval(()=> {handleSlideIncrement()}, 9000)
 
     return () => {
       clearInterval(interval)
@@ -40,7 +40,7 @@ const handleSlideDecrement = () => {
               loading="priority"
               key={data.indexOf(item)}/>)}
         </div>
-        <div className="absolute w-fit left-0 right-0 mx-auto flex gap-12 bottom-20 text-[5rem] text-white">
+        <div className="absolute w-fit left-0 right-0 mx-auto flex gap-12 bottom-20 text-[4rem] text-white">
           <div className="arrows" onClick={handleSlideDecrement}>
             <i className="bx bx-left-arrow-circle"></i>
           </div>

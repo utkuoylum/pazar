@@ -9,7 +9,7 @@ export default {
         titleFont: "Kumbh Sans"
       },
       height: {
-        sliderHeight: "calc(100vh - 5rem)"
+        sliderHeight: "calc(100vh - 17.5rem)"
       }
     },
   },
