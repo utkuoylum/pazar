@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="flex flex-col justify-center gap-2">
           <img src="/assets/logolight.png" alt="footer logo" className="w-24" />
           <p className="text-white text-sm tracking-wide">
-            &copy; projectpazar.com{" "}
+            &copy; projectpazar
           </p>
           <img
             src="/assets/payment.png"
@@ -30,16 +30,41 @@ export default function Footer() {
           </address>
         </div>
         <div className="flex flex-col gap-2">
-        <h2 className="text-2xl font-semibold text-white mb-4">Profile</h2>
-        <p className="hover:text-white cursor-pointer duration-300"><span><i className='bx bx-user'></i></span> our account</p>
-        <p className="hover:text-white cursor-pointer duration-300"><span><i className='bx bxl-paypal' ></i></span> checkout</p>
-        <p className="hover:text-white cursor-pointer duration-300"><span><i className='bx bx-home-circle'></i></span> order tracking</p>
-        <p className="hover:text-white cursor-pointer duration-300"><span><i className='bx bx-help-circle' ></i></span> help & support</p>
-
+          <h2 className="text-2xl font-semibold text-white mb-4">Profile</h2>
+          <p className="hover:text-white cursor-pointer duration-300">
+            <span>
+              <i className="bx bx-user"></i>
+            </span>{" "}
+            our account
+          </p>
+          <p className="hover:text-white cursor-pointer duration-300">
+            <span>
+              <i className="bx bxl-paypal"></i>
+            </span>{" "}
+            checkout
+          </p>
+          <p className="hover:text-white cursor-pointer duration-300">
+            <span>
+              <i className="bx bx-home-circle"></i>
+            </span>{" "}
+            order tracking
+          </p>
+          <p className="hover:text-white cursor-pointer duration-300">
+            <span>
+              <i className="bx bx-help-circle"></i>
+            </span>{" "}
+            help & support
+          </p>
         </div>
         <div className="flex flex-col justify-center">
-            <input type="text" className="bg-transparent border px-4 py-2 text-sm" placeholder="e-mail"/>
-            <button className="text-sm border text-white border-t-0 hover:bg-gray-900">Subscribe</button>
+          <input
+            type="text"
+            className="bg-transparent border px-4 py-2 text-sm"
+            placeholder="e-mail"
+          />
+          <button className="text-sm border text-white border-t-0 hover:bg-gray-900">
+            Subscribe
+          </button>
         </div>
       </div>
     </div>

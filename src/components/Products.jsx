@@ -1,6 +1,8 @@
 import ProductsCard from "./ProductsCard";
 
-export default function Products() {
+export default function Products({products}) {
+
+
   return (
     <div className="py-10">
       <div className="flex flex-col gap-4 items-center h-[10rem]">
@@ -15,8 +17,10 @@ export default function Products() {
           ipsum!
         </p>
       </div>
-      <div className="max-w-screen-xl mx-auto">
-        <ProductsCard />
+      <div className="max-w-screen-xl mx-auto py-10 grid grid-cols-4 gap-10">
+        {products.map(item=> (
+            <ProductsCard product={item} key={item.id}/>
+        ))}
       </div>
     </div>
   );
