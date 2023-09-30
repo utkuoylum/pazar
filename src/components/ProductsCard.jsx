@@ -9,7 +9,7 @@ export default function ProductsCard({ product }) {
 
   return (
     <div className="group">
-      <div className="w-full h-96 cursor-pointer overflow-hidden relative" onClick={()=> {
+      <div className="w-full h-96 cursor-pointer overflow-hidden relative rounded-t-xl" onClick={()=> {
         navigate(`/product/${_id}`, {state: {
             item: product,
         }})}}>
