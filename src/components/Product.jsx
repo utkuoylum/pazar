@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import { addToCart } from "../redux/pazarSlice";
 
 export default function Product() {
@@ -86,7 +87,7 @@ export default function Product() {
                 price: details.price,
                 quantity: number,
                 description: details.description,
-            }))} className="bg-black text-white rounded-md py-2 px-5">
+            })) & toast.success(`${number} ${details.title}${number === 1 ? " is" : "s are"} added`)} className="bg-black text-white rounded-md py-2 px-5">
               add to cart
             </button>
           </div>
@@ -96,6 +97,18 @@ export default function Product() {
           </p>
         </div>
       </div>
+      <ToastContainer
+      position="top-left"
+      autoClose={2000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="dark"
+      />
     </div>
   );
 }
