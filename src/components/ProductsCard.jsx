@@ -1,27 +1,38 @@
-import { redirect, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import productsData from "../api/Api";
+import { addToCart } from "../redux/pazarSlice";
 
 /* eslint-disable react/prop-types */
 export default function ProductsCard({ product }) {
-    const navigate = useNavigate()
-    const _id = product.title.toLowerCase().split(" ").join("")
+  const dispatch = useDispatch();
 
-    
+  const navigate = useNavigate();
+  const _id = product.title.toLowerCase().split(" ").join("");
 
   return (
     <div className="group">
-      <div className="w-full h-96 cursor-pointer overflow-hidden relative rounded-t-xl" onClick={()=> {
-        navigate(`/product/${_id}`, {state: {
-            item: product,
-        }})}}>
+      <div
+        className="w-full h-96 cursor-pointer overflow-hidden relative rounded-t-xl"
+        onClick={() => {
+          navigate(`/product/${_id}`, {
+            state: {
+              item: product,
+            },
+          });
+        }}
+      >
         <img
           src={product.image}
           alt="product image"
           className="w-full h-full object-cover group-hover:scale-110 duration-500"
         />
-         <div className="absolute top-4 right-0">
-            {product.isNew && (
-                <p className="bg-black text-white font-semibold font-titleFont px-6 py-1">sale</p>
-            )}
+        <div className="absolute top-4 right-0">
+          {product.isNew && (
+            <p className="bg-black text-white font-semibold font-titleFont px-6 py-1">
+              sale
+            </p>
+          )}
         </div>
       </div>
       <div className="w-full border-[1px] px-2 py-4 h-[5rem] ">
@@ -34,10 +45,19 @@ export default function ProductsCard({ product }) {
           </div>
           <div className="flex gap-2 h-full relative overflow-hidden ">
             <div className="text-sm w-28 flex justify-end gap-2 transform group-hover:translate-x-24 transition-transform duration-500">
-              <p className="line-through text-gray-500">{product.isNew && `$${product.oldPrice}`}</p>
+              <p className="line-through text-gray-500">
+                {product.isNew && `$${product.oldPrice}`}
+              </p>
               <p className="font-semibold">${product.price}</p>
             </div>
-            <p
+            <p onClick={() => dispatch( addToCart({
+                _id: product._id,
+                title: product.title,
+                image: product.image,
+                price: product.price,
+                quantity: 1,
+                description: product.description,
+            }))}
               className="absolute z-20 w-[100px] text-gray-500 hover:text-gray-900 flex items-center justify-center gap-1 top-0 right-0
               transform -translate-x-32 group-hover:translate-x-0 transition-transform cursor-pointer duration-500
     "
@@ -46,7 +66,6 @@ export default function ProductsCard({ product }) {
             </p>
           </div>
         </div>
-       
       </div>
     </div>
   );
