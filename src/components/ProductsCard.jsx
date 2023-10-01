@@ -1,7 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import productsData from "../api/Api";
 import { addToCart } from "../redux/pazarSlice";
 
 /* eslint-disable react/prop-types */
