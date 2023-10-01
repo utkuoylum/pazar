@@ -1,11 +1,14 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
+import { addToCart } from "../redux/pazarSlice";
 
 export default function Product() {
+    const dispatch = useDispatch()
   const [details, setDetails] = useState({});
-  const [number, setNumber] = useState(0);
+  const [number, setNumber] = useState(1);
   const location = useLocation();
 
   useEffect(() => {
@@ -76,7 +79,14 @@ export default function Product() {
                 </button>
               </div>
             </div>
-            <button className="bg-black text-white rounded-md py-2 px-5">
+            <button onClick={()=> dispatch( addToCart({
+                _id: details._id,
+                title: details.title,
+                image: details.image,
+                price: details.price,
+                quantity: number,
+                description: details.description,
+            }))} className="bg-black text-white rounded-md py-2 px-5">
               add to cart
             </button>
           </div>
