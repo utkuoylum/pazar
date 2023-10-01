@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toast, ToastContainer } from "react-toastify";
-import { decrementQuantity, deleteItem, incrementQuantity } from "../redux/pazarSlice";
+import { decrementQuantity, deleteItem, incrementQuantity, resetCart } from "../redux/pazarSlice";
+import {Link} from "react-router-dom"
 
 export default function CartItem() {
   const dispatch = useDispatch();
@@ -76,6 +77,9 @@ export default function CartItem() {
           </div>
         ))}
       </div>
+     {productData.length > 0 ? <button onClick={()=> dispatch(
+        resetCart(productData)
+      )&toast.error("Cart is now empty")} className="bg-red-500 py-2 px-4 mt-4 rounded-md text-white hover:bg-red-600 active:bg-red-500">Reset Cart</button> : <div><p className="my-4">Add some products to the cart</p><Link className="font-semibold cursor-pointer" to="/">Go back home</Link></div>}
       <ToastContainer
       position="top-left"
       autoClose={2000}
