@@ -19,12 +19,31 @@ export const pazarSlice = createSlice({
                 state.productData.push(action.payload);
 
             }
-        }
+        },
+        deleteItem: (state,action) => {
+            state.productData = state.productData.filter(item => item._id !== action.payload)
+         },
+         resetCart: (state) => {
+            state.productData = [];
+         },
+         incrementQuantity: (state,action) => {
+            const item = state.productData.find(item => item._id === action.payload._id)
+            item && item.quantity++
+          },
+          decrementQuantity: (state,action) => {
+            const item = state.productData.find(item => item._id === action.payload._id)
+            if(item.quantity === 1) {
+                item.quantity = 1
+            } else {
+                item.quantity--
+            }
+           }
+          
     }
 })
 
 export const {
-    addToCart
+    addToCart, deleteItem, resetCart, incrementQuantity, decrementQuantity
 } = pazarSlice.actions
 
 export default pazarSlice.reducer;

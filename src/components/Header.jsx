@@ -22,12 +22,12 @@ export default function Header() {
             <li className="menuItems">Element</li>
             <li className="menuItems">Blog</li>
           </ul>
-          <div className="relative">
+         <Link to="/cart"> <div className="relative">
             <img src="/assets/shopping-cart.png" alt="" className="w-10" />
             <span className="absolute w-6 top-4 left-2 text-sm flex items-center justify-center font-semibold text-white">
               {productData.reduce((a, b) => a + b.quantity, 0)}
             </span>
-          </div>
+          </div></Link>
           <img
             src="/assets/avatar.png"
             alt="avatar user"
