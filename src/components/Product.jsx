@@ -14,11 +14,10 @@ export default function Product() {
 
   const handleClickDecrement = () => {
     number > 0 && setNumber(number - 1);
-  }
+  };
   const handleClickIncrement = () => {
     setNumber(number + 1);
-  }
-
+  };
 
   return (
     <div>
@@ -62,14 +61,29 @@ export default function Product() {
             <div className="flex items-center w-56 justify-between border-black border-[1px] p-3 rounded-md">
               <p className="text-sm">Quantity</p>
               <div className="flex items-center gap-4 text-sm font-semibold">
-                <button className=" border-black border-[1px] px-3 hover:bg-gray-700 hover:text-white duration-300 active:bg-black" onClick={handleClickDecrement} disabled={number < 1}>-</button>
+               {number > 0 && <button
+                  className=" border-black border-[1px] px-3 hover:bg-gray-700 hover:text-white duration-300 active:bg-black"
+                  onClick={handleClickDecrement}
+                >
+                  -
+                </button>}
                 <span>{number}</span>
-                <button className=" border-black border-[1px] px-3 hover:bg-gray-700 hover:text-white duration-300 active:bg-black" onClick={handleClickIncrement}>+</button>
+                <button
+                  className=" border-black border-[1px] px-3 hover:bg-gray-700 hover:text-white duration-300 active:bg-black"
+                  onClick={handleClickIncrement}
+                >
+                  +
+                </button>
               </div>
             </div>
-            <button className="bg-black text-white rounded-md py-2 px-5">add to cart</button>
+            <button className="bg-black text-white rounded-md py-2 px-5">
+              add to cart
+            </button>
           </div>
-          <p className="text-base">Category:<span className="capitalize"> {details.category}</span></p>
+          <p className="text-base text-gray-600">
+            Category:
+            <span className="capitalize font-medium"> {details.category}</span>
+          </p>
         </div>
       </div>
     </div>
