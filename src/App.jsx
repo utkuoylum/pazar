@@ -31,7 +31,6 @@ children: [
   {
     path: "/product/:id",
     element: <Product />,
-    loader: productsData
   },
   {path: "/cart", element: <Cart />}
 ]
