@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -7,7 +6,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { addToCart } from "../redux/pazarSlice";
 
 export default function Product() {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [details, setDetails] = useState({});
   const [number, setNumber] = useState(1);
   const location = useLocation();
@@ -65,12 +64,14 @@ export default function Product() {
             <div className="flex items-center w-56 justify-between border-black border-[1px] p-3 rounded-md">
               <p className="text-sm">Quantity</p>
               <div className="flex items-center gap-4 text-sm font-semibold">
-               {number > 0 && <button
-                  className=" border-black border-[1px] px-3 hover:bg-gray-700 hover:text-white duration-300 active:bg-black"
-                  onClick={handleClickDecrement}
-                >
-                  -
-                </button>}
+                {number > 0 && (
+                  <button
+                    className=" border-black border-[1px] px-3 hover:bg-gray-700 hover:text-white duration-300 active:bg-black"
+                    onClick={handleClickDecrement}
+                  >
+                    -
+                  </button>
+                )}
                 <span>{number}</span>
                 <button
                   className=" border-black border-[1px] px-3 hover:bg-gray-700 hover:text-white duration-300 active:bg-black"
@@ -80,14 +81,26 @@ export default function Product() {
                 </button>
               </div>
             </div>
-            <button onClick={()=> dispatch( addToCart({
-                _id: details._id,
-                title: details.title,
-                image: details.image,
-                price: details.price,
-                quantity: number,
-                description: details.description,
-            })) & toast.success(`${number} ${details.title}${number === 1 ? " is" : "s are"} added`)} className="bg-black text-white rounded-md py-2 px-5">
+            <button
+              onClick={() =>
+                dispatch(
+                  addToCart({
+                    _id: details._id,
+                    title: details.title,
+                    image: details.image,
+                    price: details.price,
+                    quantity: number,
+                    description: details.description,
+                  })
+                ) &
+                toast.success(
+                  `${number} ${details.title}${
+                    number === 1 ? " is" : "s are"
+                  } added`
+                )
+              }
+              className="bg-black text-white rounded-md py-2 px-5"
+            >
               add to cart
             </button>
           </div>
@@ -98,16 +111,16 @@ export default function Product() {
         </div>
       </div>
       <ToastContainer
-      position="top-left"
-      autoClose={2000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      theme="dark"
+        position="top-left"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
       />
     </div>
   );

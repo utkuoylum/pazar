@@ -23,7 +23,7 @@ export default function Footer() {
           <h2 className="text-2xl font-semibold text-white mb-4">Locate us</h2>
 
           <address className="text-base flex flex-col gap-2">
-            <p>Ku'damm</p>
+            <p>Kudamm</p>
             <p>10719 Berlin</p>
             <p>Mobile: +49123123123</p>
             <p>email: pazar@pazarr.com</p>
