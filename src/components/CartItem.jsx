@@ -46,7 +46,7 @@ export default function CartItem() {
                           title: item.title,
                           image: item.image,
                           price: item.price,
-                          quantity: 1,
+                          quantity: item.quantity,
                           description: item.description,
                         })
                       )&toast.error(`1 ${item.title} is removed`)
@@ -63,10 +63,10 @@ export default function CartItem() {
                           title: item.title,
                           image: item.image,
                           price: item.price,
-                          quantity: 1,
+                          quantity: item.quantity,
                           description: item.description,
-                        }& toast.success(`1 ${item.title} is added`))
-                      )
+                        })
+                      )& toast.success(`1 ${item.title} is added`)
                     } className=" border-black border-[1px] px-3 hover:bg-gray-700 hover:text-white duration-300 active:bg-black">
                   +
                 </button>
