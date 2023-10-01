@@ -26,7 +26,7 @@ export default function Cart() {
                 </p>
             </div>
             <p className="flex justify-between font-titleFont font-semibold mt-6">Total <span className="text-xl font-bold">${productData.reduce((a,b)=>a+(b.price * b.quantity),0).toFixed(2)}</span></p>
-            <button className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300 active:bg-black">proceed to checkout</button>
+            <button className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300 active:bg-black rounded-md">proceed to checkout</button>
         </div>
        </div>
     </div>

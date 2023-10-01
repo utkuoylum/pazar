@@ -6,7 +6,7 @@ export default function CartItem() {
   const dispatch = useDispatch();
   const productData = useSelector((state) => state.pazar.productData);
   return (
-    <div className="w-2/3 pr-10">
+    <div className="w-2/3 pr-10 text-center">
       <div className="w-full">
         <h2 className="font-titleFont text-2xl">shopping cart</h2>
       </div>
@@ -28,7 +28,7 @@ export default function CartItem() {
               <img
                 src={item.image}
                 alt="productimg"
-                className="w-32 h-32 object-cover"
+                className="w-32 h-32 object-cover rounded-md"
               />
             </div>
             <h2 className="w-52">{item.title}</h2>
