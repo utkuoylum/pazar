@@ -94,8 +94,8 @@ export default function Product() {
                   })
                 ) &
                 toast.success(
-                  `${number} ${details.title}${
-                    number === 1 ? " is" : "s are"
+                  `${number} of ${details.title}${
+                    number === 1 ? " is" : "are"
                   } added`
                 )
               }
