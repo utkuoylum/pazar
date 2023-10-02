@@ -79,7 +79,7 @@ export default function CartItem() {
       </div>
      {productData.length > 0 ? <button onClick={()=> dispatch(
         resetCart()
-      )&toast.error("Cart is now empty")} className="bg-red-500 py-2 px-4 mt-4 rounded-md text-white hover:bg-red-700 active:bg-red-500">Reset Cart</button> : <div><p className="my-4">Add some products to the cart</p><Link className="font-semibold cursor-pointer" to="/">Go back home</Link></div>}
+      )&toast.error("Cart is now empty")} className="bg-red-500 py-2 px-4 mt-4 rounded-md text-white hover:bg-red-700 active:bg-red-500">Reset Cart</button> : <div><p className="my-4 text-red-400 font-semibold">Your cart is empty. Add some products to the cart</p><Link className="font-semibold cursor-pointer" to="/">Go back home</Link></div>}
       <ToastContainer
       position="top-left"
       autoClose={2000}
