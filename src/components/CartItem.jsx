@@ -52,7 +52,7 @@ export default function CartItem() {
                         })
                       )&toast.error(`1 ${item.title} is removed`)
                     }
-                  >
+                  disabled={item.quantity === 1}>
                     -
                   </button>
                 )}
