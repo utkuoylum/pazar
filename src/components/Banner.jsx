@@ -23,7 +23,7 @@ export default function Banner() {
   useEffect(() => {
     const interval = setInterval(() => {
       handleSlideIncrement();
-    }, 9000);
+    }, 6000);
 
     return () => {
       clearInterval(interval);
