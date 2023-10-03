@@ -50,7 +50,7 @@ export default function CartItem() {
                           quantity: item.quantity,
                           description: item.description,
                         })
-                      )&toast.error(`1 ${item.title} is removed`)
+                      )
                     }
                   disabled={item.quantity === 1}>
                     -
@@ -67,7 +67,7 @@ export default function CartItem() {
                           quantity: item.quantity,
                           description: item.description,
                         })
-                      )& toast.success(`1 ${item.title} is added`)
+                      )
                     } className=" border-black border-[1px] px-3 hover:bg-gray-700 hover:text-white duration-300 active:bg-black">
                   +
                 </button>
