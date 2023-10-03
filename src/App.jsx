@@ -6,6 +6,7 @@ import { createBrowserRouter, Outlet, RouterProvider, ScrollRestoration } from '
 import Cart from './pages/Cart'
 import productsData from './api/Api'
 import Product from './components/Product'
+import Login from './pages/Login'
 
 
 
@@ -33,7 +34,8 @@ children: [
     path: "/product/:id",
     element: <Product />,
   },
-  {path: "/cart", element: <Cart />}
+  {path: "/cart", element: <Cart />},
+  {path: "/login", element: <Login />},
 ]
 }
 ])

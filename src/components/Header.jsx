@@ -16,7 +16,6 @@ export default function Header() {
         <div className="flex gap-8">
           <ul className="flex items-center gap-8">
             <li className="menuItems">Home</li>
-            <li className="menuItems">Pages</li>
             <li className="menuItems">Shop</li>
             <li className="menuItems">Element</li>
             <li className="menuItems">Blog</li>
@@ -27,11 +26,11 @@ export default function Header() {
               {productData.reduce((a, b) => a + b.quantity, 0)}
             </span>
           </div></Link>
-          <img
+          <Link to="/login"> <img
             src="/assets/avatar.png"
             alt="avatar user"
             className="w-11 rounded-full"
-          />
+          /></Link>
         </div>
       </div>
       
