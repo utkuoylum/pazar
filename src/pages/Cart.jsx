@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import CartItem from "../components/CartItem"
 
@@ -8,6 +9,7 @@ export default function Cart() {
     const userInfo = useSelector(state=>state.pazar.userInfo)
     const productData = useSelector((state)=> state.pazar.productData)
     const [payNow, setPayNow] = useState(false)
+    const navigate = useNavigate()
 
 
 function handleCheckout() {
@@ -15,6 +17,9 @@ function handleCheckout() {
         setPayNow(true)
     } else {
         toast.error("Please sign in to checkout")
+        setTimeout(()=> {
+            navigate("/login")
+        },2000)
     }
     
 }
