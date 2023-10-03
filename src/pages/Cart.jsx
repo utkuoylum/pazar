@@ -1,9 +1,25 @@
+import { useState } from "react"
 import { useSelector } from "react-redux"
+import { toast } from "react-toastify"
 import CartItem from "../components/CartItem"
 
 
 export default function Cart() {
+    const userInfo = useSelector(state=>state.pazar.userInfo)
     const productData = useSelector((state)=> state.pazar.productData)
+    const [payNow, setPayNow] = useState(false)
+
+
+function handleCheckout() {
+    if(userInfo) {
+        setPayNow(true)
+    } else {
+        toast.error("Please sign in to checkout")
+    }
+    
+}
+
+
   return (
     <div>
         <img src="/assets/cartbanner.jpg" alt="sun glasses" className="w-full h-60 object-cover" />
@@ -27,7 +43,7 @@ export default function Cart() {
                 </p>
             </div>
             <p className="flex justify-between font-titleFont font-semibold mt-6">Total <span className="text-xl font-bold">${productData.reduce((a,b)=>a+(b.price * b.quantity),0).toFixed(2)}</span></p>
-            <button className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300 active:bg-black rounded-md">proceed to checkout</button>
+            <button onClick={handleCheckout} className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300 active:bg-black rounded-md">proceed to checkout</button>
         </div>
        </div>
     </div>
