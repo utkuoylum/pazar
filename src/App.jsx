@@ -42,7 +42,7 @@ children: [
 
 function App() {
   return (
-    <div className="font-bodyFont">
+    <div className="font-bodyFont ">
    <RouterProvider router={router}/>
     </div>
   )

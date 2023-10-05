@@ -16,10 +16,8 @@ export default function Header() {
         </Link>
         <div className="flex gap-8 items-center">
           <ul className="flex items-center gap-8">
-            <li className="menuItems">Home</li>
-            <li className="menuItems">Shop</li>
-            <li className="menuItems">Element</li>
-            <li className="menuItems">Blog</li>
+            <Link to="/"><li className="menuItems">Home</li></Link> 
+            <Link to="#products"><li className="menuItems">Shop</li></Link> 
           </ul>
          <Link to="/cart"> <div className="relative">
             <img src="/assets/shopping-cart.png" alt="" className="w-10" />

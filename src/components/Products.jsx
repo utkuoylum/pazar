@@ -4,7 +4,7 @@ export default function Products({products}) {
 
 
   return (
-    <div className="py-10">
+    <div className="py-10" id="products">
       <div className="flex flex-col gap-4 items-center h-[10rem]">
         <h1 className="text-2xl bg-black text-white py-2 w-80 text-center">
           Let's shop all day
