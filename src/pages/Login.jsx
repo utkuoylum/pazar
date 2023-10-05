@@ -32,9 +32,9 @@ signInWithPopup(auth, provider)
         email: user.email,
         image: user.photoURL
     }));
-    toast.success("Logged in successfully. You will be redirected to home page in seconds.")
+    toast.success("Logged in successfully. You will be redirected to cart page in seconds.")
     setTimeout(()=> {
-        navigate("/")
+        navigate("/cart")
     }, 2000)
     // IdP data available using getAdditionalUserInfo(result)
     // ...
